@@ -1,12 +1,12 @@
 pragma solidity ^0.4.2;
 
 contract MyContract {
-    uint data;
+    uint data = 123;
 
     function getData() external view returns(uint) {
         return data;
     }
-    function seData(uint _data) external {
+    function setData(uint _data) external {
         data = _data;
     }
 

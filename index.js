@@ -14,8 +14,26 @@ const init = async () => {
         deployedNetwork.address
     )
 
+    const address = await web3.eth.getAccounts();
     const result = await contract.methods.getData().call()
-    console.log(result);
+    const receipt = await contract.methods.setData(456).send({
+        from: address[0],        
+    })
+    console.log(receipt)
+    // .on('receipt', receipt => {
+    //     // console.log(receipt)
+    // });
+    // on('confirmation', (confirmationNumber, receipt) => {
+    //     console.log(confirmationNumber, receipt)
+    // })
+    // on('error', (error, receipt) => {
+    //     console.log(error, receipt)
+    // })
+
+
+
+
+
 }
 
 init();
