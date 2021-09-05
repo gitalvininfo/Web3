@@ -3,6 +3,8 @@ pragma solidity ^0.4.2;
 contract MyContract {
     uint data = 123;
     string public functionCalled;
+    string public functionCalled1;
+    string public functionCalled2;
 
     function getData() external view returns(uint) {
         return data;
